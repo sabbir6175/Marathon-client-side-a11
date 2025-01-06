@@ -24,11 +24,11 @@ const Dashboard = () => {
       <div className="flex flex-col min-h-screen">
         
         <div className="flex flex-1">
-          <nav className="w-1/5 bg-gray-100 p-4">
+          <nav className="w-1/5 bg-cyan-300  p-4">
             <ul className="space-y-2">
               <li>
                 <button
-                  className={`w-full text-left p-2 ${activePage === 'AddMarathon' ? 'bg-red-200 rounded-sm' : ''}`}
+                  className={`w-full  text-left p-2 ${activePage === 'AddMarathon' ? 'bg-red-100 rounded-sm' : ''}`}
                   onClick={() => setActivePage('AddMarathon')}
                 >
                   Add Marathon
@@ -36,7 +36,7 @@ const Dashboard = () => {
               </li>
               <li>
                 <button
-                  className={`w-full text-left p-2 ${activePage === 'MyMarathonList' ? 'bg-red-200 rounded-sm' : ''}`}
+                  className={`w-full text-left p-2 ${activePage === 'MyMarathonList' ? 'bg-red-100 rounded-sm' : ''}`}
                   onClick={() => setActivePage('MyMarathonList')}
                 >
                   My Marathon List
@@ -44,7 +44,7 @@ const Dashboard = () => {
               </li>
               <li>
                 <button
-                  className={`w-full text-left p-2 ${activePage === 'MyApplyList' ? 'bg-red-200 rounded-sm' : ''}`}
+                  className={`w-full text-left p-2 ${activePage === 'MyApplyList' ? 'bg-red-100 rounded-sm' : ''}`}
                   onClick={() => setActivePage('MyApplyList')}
                 >
                   My Apply List
@@ -52,7 +52,7 @@ const Dashboard = () => {
               </li>
             </ul>
           </nav>
-          <div className="w-4/5 p-4 bg-slate-500">{renderContent()}</div>
+          <div className="w-4/5 p-4 ">{renderContent()}</div>
         </div>
       
       </div>
