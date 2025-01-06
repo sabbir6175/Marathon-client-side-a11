@@ -20,12 +20,20 @@ const Navbar = () => {
       })
   }
 
-    const links = <>
-            <li><Link to={"/"}>Home</Link></li>
-            <li><Link to={"/Marathon"}>Marathon</Link></li>
-           
-          
+    const links = (
+    <>
+        <li><Link to={"/"}>Home</Link></li>
+        <li><Link to={"/Marathon"}>Marathon</Link></li>
+           {
+            user && (
+              <>
+                 <li><Link to={"/Dashboard"}>Dashboard</Link></li>
+              </>
+            )
+           }
     </>
+    )
+  
     
 
   return (
@@ -74,7 +82,7 @@ const Navbar = () => {
             user ? <>
                 <Link>
                   <div className='flex items-center gap-2'>
-                    <h1>{user?.email}</h1>
+                    
                     <img src={user?.photoURL} className='w-10 h-10 rounded-full' alt="" />
                     <button  onClick={handleSingOut} className='btn btn-sm lg:btn-md text-white bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  '>Log Out</button>
                   </div>
