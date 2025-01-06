@@ -1,171 +1,165 @@
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const AddMarathon = () => {
-  const [formData, setFormData] = useState({
-    marathonTitle: "",
-    startRegistrationDate: new Date(),
-    endRegistrationDate: new Date(),
-    marathonStartDate: new Date(),
-    location: "",
-    runningDistance: "25k", // default value
-    description: "",
-    marathonImage: null,
-    totalRegistrationCount: 0,
-    createdAt: new Date(),
-  });
+  const [title, setTitle] = useState('');
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  const [marathonDate, setMarathonDate] = useState(new Date());
+  const [location, setLocation] = useState('');
+  const [distance, setDistance] = useState('25k');
+  const [description, setDescription] = useState('');
+  const [image, setImage] = useState(null);
+  const [message, setMessage] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleDateChange = (date, name) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: date,
-    }));
-  };
-
-  const handleImageChange = (e) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      marathonImage: e.target.files[0],
-    }));
-  };
-
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Add the logic to save the form data to the server or handle the data here.
+
+    const marathonDetails = {
+      title,
+      startDate,
+      endDate,
+      marathonDate,
+      location,
+      distance,
+      description,
+      image,
+      createdAt: new Date(), // Automatically set the creation date
+      totalRegistrationCount: 0, // Initial registration count
+    };
+
+    // Simulate saving the marathon details (usually, you'd send this data to a backend)
+    console.log(marathonDetails);
+
+    // Show success message
+    setMessage('Marathon event created successfully!');
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6 bg-gradient-to-r  bg-emerald-300 shadow-lg rounded-lg">
-      <div className="mb-4">
-        <label className="block text-gray-700 font-semibold">Marathon Title</label>
-        <input
-          type="text"
-          name="marathonTitle"
-          value={formData.marathonTitle}
-          onChange={handleChange}
-          className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          required
-        />
-      </div>
+    <div className="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-4">Create a Marathon Event</h2>
+      {message && (
+        <div className="mb-4 p-3 text-green-700 bg-green-100 border border-green-300 rounded-md">
+          {message}
+        </div>
+      )}
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+            Marathon Title
+          </label>
+          <input
+            type="text"
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded-md"
+            required
+          />
+        </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700 font-semibold">Start Registration Date</label>
-        <DatePicker
-          selected={formData.startRegistrationDate}
-          onChange={(date) => handleDateChange(date, "startRegistrationDate")}
-          className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          required
-        />
-      </div>
+        <div>
+          <label htmlFor="startDate" className="block text-sm font-medium text-gray-700">
+            Start Registration Date
+          </label>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            className="w-full p-2 border border-gray-300 rounded-md"
+            dateFormat="yyyy-MM-dd"
+            required
+          />
+        </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700 font-semibold">End Registration Date</label>
-        <DatePicker
-          selected={formData.endRegistrationDate}
-          onChange={(date) => handleDateChange(date, "endRegistrationDate")}
-          className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          required
-        />
-      </div>
+        <div>
+          <label htmlFor="endDate" className="block text-sm font-medium text-gray-700">
+            End Registration Date
+          </label>
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            className="w-full p-2 border border-gray-300 rounded-md"
+            dateFormat="yyyy-MM-dd"
+            required
+          />
+        </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700 font-semibold">Marathon Start Date</label>
-        <DatePicker
-          selected={formData.marathonStartDate}
-          onChange={(date) => handleDateChange(date, "marathonStartDate")}
-          className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          required
-        />
-      </div>
+        <div>
+          <label htmlFor="marathonDate" className="block text-sm font-medium text-gray-700">
+            Marathon Start Date
+          </label>
+          <DatePicker
+            selected={marathonDate}
+            onChange={(date) => setMarathonDate(date)}
+            className="w-full p-2 border border-gray-300 rounded-md"
+            dateFormat="yyyy-MM-dd"
+            required
+          />
+        </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700 font-semibold">Location</label>
-        <input
-          type="text"
-          name="location"
-          value={formData.location}
-          onChange={handleChange}
-          className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          required
-        />
-      </div>
+        <div>
+          <label htmlFor="location" className="block text-sm font-medium text-gray-700">
+            Location
+          </label>
+          <input
+            type="text"
+            id="location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded-md"
+            required
+          />
+        </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700 font-semibold">Running Distance</label>
-        <select
-          name="runningDistance"
-          value={formData.runningDistance}
-          onChange={handleChange}
-          className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          required
-        >
-          <option value="25k">25k</option>
-          <option value="10k">10k</option>
-          <option value="3k">3k</option>
-        </select>
-      </div>
+        <div>
+          <label htmlFor="distance" className="block text-sm font-medium text-gray-700">
+            Running Distance
+          </label>
+          <select
+            id="distance"
+            value={distance}
+            onChange={(e) => setDistance(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded-md"
+            required
+          >
+            <option value="25k">25k</option>
+            <option value="10k">10k</option>
+            <option value="3k">3k</option>
+          </select>
+        </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700 font-semibold">Description</label>
-        <textarea
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          required
-        ></textarea>
-      </div>
+        <div>
+          <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+            Description
+          </label>
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded-md"
+            required
+          />
+        </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700 font-semibold">Marathon Image</label>
-        <input
-          type="file"
-          name="marathonImage"
-          onChange={handleImageChange}
-          className="w-full p-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          required
-        />
-      </div>
+        <div>
+          <label htmlFor="image" className="block text-sm font-medium text-gray-700">
+            Marathon Image
+          </label>
+          <input
+            type="file"
+            id="image"
+            onChange={(e) => setImage(e.target.files[0])}
+            className="w-full p-2 border border-gray-300 rounded-md"
+          />
+        </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700 font-semibold">Total Registration Count</label>
-        <input
-          type="number"
-          name="totalRegistrationCount"
-          value={formData.totalRegistrationCount}
-          disabled
-          className="w-full p-2 mt-2 border border-gray-300 rounded-md bg-gray-100"
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700 font-semibold">Created At</label>
-        <input
-          type="text"
-          name="createdAt"
-          value={formData.createdAt.toString()}
-          disabled
-          className="w-full p-2 mt-2 border border-gray-300 rounded-md bg-gray-100"
-        />
-      </div>
-
-      <button
-        type="submit"
-        className="w-full p-3 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 transition duration-300"
-      >
-        Submit
-      </button>
-    </form>
+        <button type="submit" className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 
