@@ -7,6 +7,7 @@ import Login from "../page/AccountCreate/Login";
 import Register from "../page/AccountCreate/Register";
 import Marathon from "../page/Marathon/Marathon";
 import Dashboard from "../page/Dashboard/Dashboard";
+import PrivateRoute from "./PrivateRouter";
 
 
   const router = createBrowserRouter([
@@ -25,7 +26,7 @@ import Dashboard from "../page/Dashboard/Dashboard";
         },
         {
           path:"/Dashboard",
-          element: <Dashboard></Dashboard>
+          element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
         },
        
         {

@@ -16,7 +16,7 @@ const Dashboard = () => {
         case 'MyApplyList':
           return <MyApplyList />;
         default:
-          return <div className="p-4">Select a page from the sidebar.</div>;
+          return <div className="p-4 ">Select a page from the sidebar.</div>;
       }
     };
   
@@ -24,8 +24,9 @@ const Dashboard = () => {
       <div className="flex flex-col min-h-screen">
         
         <div className="flex flex-1">
-          <nav className="w-1/5 bg-cyan-300  p-4">
-            <ul className="space-y-2">
+          <div className="w-1/5  bg-cyan-400  p-4">
+            <nav >
+            <ul className="space-y-4">
               <li>
                 <button
                   className={`w-full  text-left p-2 ${activePage === 'AddMarathon' ? 'bg-red-100 rounded-sm' : ''}`}
@@ -52,7 +53,8 @@ const Dashboard = () => {
               </li>
             </ul>
           </nav>
-          <div className="w-4/5 p-4 ">{renderContent()}</div>
+          </div>
+          <div className="w-4/5 p-4 bg-pink-50 ">{renderContent()}</div>
         </div>
       
       </div>

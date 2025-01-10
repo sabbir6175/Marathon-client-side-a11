@@ -4,7 +4,7 @@ const MarathonSection = () => {
   return (
     <div>
         <h1 className="text-5xl text-center my-10 font-bold">Marathons Section</h1>
-     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5">
                {/* card 1 */}
                <div class="card  bg-base-100 shadow-xl">
                     <figure>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Another2Section = () => {
   return (
-    <div>
+    <div className="">
       <section class="py-16 bg-gray-200">
         <div class="container mx-auto text-center">
           <h2 class="text-3xl font-semibold text-gray-800 mb-8">
@@ -12,7 +12,7 @@ const Another2Section = () => {
             Get ready for your marathon with these essential training tips that
             will improve your performance and help you stay injury-free.
           </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
             <div class="card bg-white shadow-lg rounded-lg p-6 hover:scale-105 transform transition duration-300">
               <h3 class="text-2xl font-semibold text-gray-800 mb-4">
                 Build Your Endurance
@@ -42,7 +42,7 @@ const Another2Section = () => {
                 Fuel your body properly by eating balanced meals, focusing on
                 carbohydrates, proteins, and healthy fats. Hydration is key too!
               </p>
-            </div>
+            </div> 
           </div>
         </div>
       </section>
@@ -56,8 +56,8 @@ const Another2Section = () => {
             Check out the top runners and their impressive finishes from recent
             marathons. Stay inspired to achieve your goals!
           </p>
-          <div class="overflow-x-auto">
-            <table class="table-auto w-full text-left">
+          <div class="overflow-x-auto px-4">
+            <table class="table-auto w-full text-left ">
               <thead>
                 <tr>
                   <th class="px-4 py-2 text-gray-700 font-semibold">Rank</th>
