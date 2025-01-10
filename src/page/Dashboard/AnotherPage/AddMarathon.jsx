@@ -22,28 +22,7 @@ const AddMarathon = () => {
     marathonImage: "",
   });
 
-//   _id
-// 677c1dfb00fa32250c957b02
-// marathonTitle
-// "Sunset Run 2025"
-// startRegistrationDate
-// "2025-02-01"
-// endRegistrationDate
-// "2025-03-01"
-// marathonStartDate
-// "2025-06-10"
-// location
-// "California, USA"
-// runningDistance
-// "25k"
-// description
-// "A scenic race along the coastline at sunset."
-// marathonImage
-// "https://i.ibb.co.com/FxG39dS/Sunset-Run.jpg"
-// totalRegistrationCount
-// 0
-// createdAt
-// "2025-01-07"
+
 
   const navigate = useNavigate();
 
@@ -121,6 +100,7 @@ const AddMarathon = () => {
                   handleDateChange(date, "startRegistrationDate")
                 }
                 className="input input-bordered w-full"
+               dateFormat="yyyy-MM-dd"
               />
             </div>
 
@@ -134,6 +114,7 @@ const AddMarathon = () => {
                   handleDateChange(date, "endRegistrationDate")
                 }
                 className="input input-bordered w-full"
+                 dateFormat="yyyy-MM-dd"
               />
             </div>
 
@@ -145,6 +126,7 @@ const AddMarathon = () => {
                 selected={marathonData.marathonStartDate}
                 onChange={(date) => handleDateChange(date, "marathonStartDate")}
                 className="input input-bordered w-full"
+                 dateFormat="yyyy-MM-dd"
               />
             </div>
           </div>

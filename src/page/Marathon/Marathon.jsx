@@ -38,14 +38,14 @@ const Marathon = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title text-xl font-bold">{marathon.marathonTitle}</h2>
-            <p className="">Location: {marathon.location}</p>
+            <p className="">Location : {marathon.location}</p>
             <p className="">
-              {`Registration start: ${new Date(marathon.startRegistrationDate).toLocaleDateString()}`}
+              {`Registration start : ${new Date(marathon.startRegistrationDate).toLocaleDateString()}`}
               
             </p>
-            <p>{`Registration End: ${new Date(marathon.endRegistrationDate).toLocaleDateString()}`}</p>
-            <div className="card-actions justify-end">
-              <Link to={`/marathon/${marathon._id}`} className="btn btn-info">
+            <p>{`Registration End : ${new Date(marathon.endRegistrationDate).toLocaleDateString()}`}</p>
+            <div className="card-actions ">
+              <Link to={`/marathon/${marathon._id}`} className="btn text-red-500 btn-warning">
                 See Details
               </Link>
             </div>
