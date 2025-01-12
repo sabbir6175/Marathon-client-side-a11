@@ -64,6 +64,8 @@ const AddMarathon = () => {
         setMarathonData(data);
         console.log(data);
         toast.success("Marathon created successfully!");
+        navigate('/')
+
       });
   };
 
