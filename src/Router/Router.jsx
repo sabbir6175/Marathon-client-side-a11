@@ -10,6 +10,9 @@ import Dashboard from "../page/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRouter";
 import MarathonDetails from "../page/Marathon/MarathonDetails";
 import RegisterForm from "../page/Marathon/RegisterForm";
+import AddMarathon from "../page/Dashboard/AnotherPage/AddMarathon";
+import MyMarathonList from "../page/Dashboard/AnotherPage/MyMarathonList";
+import MyApplyList from "../page/Dashboard/AnotherPage/MyApplyList";
 
 
   const router = createBrowserRouter([
@@ -32,13 +35,28 @@ import RegisterForm from "../page/Marathon/RegisterForm";
           loader: ({params}) => fetch(`http://localhost:3000/AddMarathon/${params.id}`)
         },
         {
-          path: "registerFrom/:id",
+          path: "/marathon/reg/:id",
           element: <PrivateRoute><RegisterForm></RegisterForm></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:3000/AddMarathon/${params.id}`)
         },
         {
           path:"/Dashboard",
-          element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+          element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+          children: [
+            {
+              path: "AddMarathon",
+              element: <AddMarathon></AddMarathon>,
+            },
+            {
+              path: "MyMarathonList",
+              element: <MyMarathonList></MyMarathonList> ,
+              loader: ()=>fetch('http://localhost:3000/AddMarathon')
+            },
+            {
+              path: "MyApplyList",
+              element: <MyApplyList></MyApplyList>,
+            },
+          ]
         },
         {
           path: "/login",

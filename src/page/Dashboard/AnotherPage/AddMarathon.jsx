@@ -68,7 +68,7 @@ const AddMarathon = () => {
   };
 
   return (
-    <div className="p-10 ">
+    <div className="p-10 bg-red-400 rounded-md">
       <div className="max-w-4xl  bg-cyan-300 text-red-500 rounded-md shadow-sm mx-auto p-6">
         <h1
           className="text-3xl font-bold text-center
