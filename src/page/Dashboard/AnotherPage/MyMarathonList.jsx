@@ -11,6 +11,38 @@ const MyMarathonList = () => {
 
 
 
+  const handleDeleteUser =(id)=>{
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+       
+        fetch(`http://localhost:3000/AddMarathon/${id}`,{
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data=>{
+                if(data.deletedCount){
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your Marathon has been deleted.",
+                        icon: "success"
+                    });
+                    const remainingUsers = myCampaign.filter(User => User._id !== id)
+                    setMyCampaign(remainingUsers)
+                }
+            })
+        }
+       
+      });
+}
+
 
 
   return (
@@ -48,7 +80,7 @@ const MyMarathonList = () => {
                             <td>{marathon.endRegistrationDate}</td>
                             <td className="flex gap-2">
                                 <button className="btn bg-orange-500 btn-sm ">Update</button>
-                                <button  className="btn bg-red-500 btn-sm  ">Delete</button>
+                                <button onClick={()=>handleDeleteUser(marathon._id)} className="btn bg-red-500 btn-sm  ">Delete</button>
                             </td>
                             
                         </tr>
