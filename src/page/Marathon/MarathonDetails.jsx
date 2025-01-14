@@ -24,12 +24,12 @@ const MarathonDetails = () => {
   // }
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div>
-        <img src={marathon.marathonImage} alt="" />
+    <div className="max-w-3xl mx-auto p-6 shadow-3xl ">
+      <div className="p-2">
+        <img className="w-full rounded-md h-52 md:h-72 " src={marathon.marathonImage} alt="" />
       </div>
-      <h1 className="text-2xl font-bold my-3">{marathon.marathonTitle}</h1>
-      <div className="flex flex-col lg:flex-row md:gap-5">
+      <h1 className="text-2xl font-bold my-3 mx-2">{marathon.marathonTitle}</h1>
+      <div className="flex flex-col lg:flex-row md:gap-5 px-2 justify-between">
         <div>
           <span className="flex gap-2 text-base items-center">
             <h1 className="text-purple-500 font-bold text-lg">location : </h1>
@@ -63,7 +63,7 @@ const MarathonDetails = () => {
           </span>
           <span className="flex gap-2 text-base items-center">
             <h1 className="text-purple-500 font-bold text-lg">CreatedAt : </h1>
-            <span> {marathon.createdAt}</span>
+            <span>{`${new Date(marathon.createdAt).toDateString()}`}</span>
           </span>
           <span className="flex gap-2 text-base items-center">
             <h1 className="text-purple-500 font-bold text-lg">

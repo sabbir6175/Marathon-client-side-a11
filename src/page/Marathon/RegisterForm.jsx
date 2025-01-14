@@ -1,15 +1,16 @@
 import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 import AuthContext from "../../Context/AuthContext/AuthContext";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const RegisterForm = () => {
     const marathonData = useLoaderData();
     const {marathonTitle,marathonStartDate} = marathonData;
     const { user} = useContext(AuthContext)
     console.log(marathonData)
-    
+    const navigate = useNavigate()
 
         const handleRegistration =(e)=>{
             e.preventDefault();
@@ -36,7 +37,11 @@ const RegisterForm = () => {
                       .then((res) => res.json())
                       .then((data) => {
                         console.log(data);
-                        toast.success("Marathon Registration successfully!");
+                        Swal.fire({
+                          title: "Marathon Registration successfully!",
+                          icon: "success",
+                          draggable: true
+                        });
                       });
 
         }

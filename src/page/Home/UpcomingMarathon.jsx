@@ -20,7 +20,7 @@ const UpcomingMarathon = () => {
                   Registration Dates: March 1, 2025 - June 30, 2025
                 </p>
                 <div class="card-actions justify-end">
-                  <a href="details.html" class="btn btn-info text-white">
+                  <a href="#" class="btn btn-info text-white">
                     See Details
                   </a>
                 </div>
@@ -38,7 +38,7 @@ const UpcomingMarathon = () => {
                   Registration Dates: February 15, 2025 - April 30, 2025
                 </p>
                 <div class="card-actions justify-end">
-                  <a href="details.html" class="btn btn-info text-white">
+                  <a href="#" class="btn btn-info text-white">
                     See Details
                   </a>
                 </div>
@@ -56,7 +56,7 @@ const UpcomingMarathon = () => {
                   Registration Dates: March 10, 2025 - June 1, 2025
                 </p>
                 <div class="card-actions justify-end">
-                  <a href="details.html" class="btn btn-info text-white">
+                  <a href="#" class="btn btn-info text-white">
                     See Details
                   </a>
                 </div>
@@ -74,7 +74,7 @@ const UpcomingMarathon = () => {
                   Registration Dates: January 15, 2025 - April 1, 2025
                 </p>
                 <div class="card-actions justify-end">
-                  <a href="details.html" class="btn btn-info text-white">
+                  <a href="#" class="btn btn-info text-white">
                     See Details
                   </a>
                 </div>
@@ -92,7 +92,7 @@ const UpcomingMarathon = () => {
                   Registration Dates: March 5, 2025 - July 10, 2025
                 </p>
                 <div class="card-actions justify-end">
-                  <a href="details.html" class="btn btn-info text-white">
+                  <a href="#" class="btn btn-info text-white">
                     See Details
                   </a>
                 </div>

@@ -53,10 +53,7 @@ const AddMarathon = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        ...marathonData,
-        totalRegistrations: 0,
-      }),
+      body: JSON.stringify(marathonData),
     })
       .then((res) => res.json())
       .then((data) => {
