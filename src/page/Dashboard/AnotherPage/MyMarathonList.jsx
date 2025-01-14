@@ -144,8 +144,8 @@ const MyMarathonList = () => {
                   <td>{marathon.marathonTitle}</td>
                   <td>{marathon.location}</td>
                   <td>{marathon.runningDistance}</td>
-                  <td>{marathon.startRegistrationDate}</td>
-                  <td>{marathon.endRegistrationDate}</td>
+                  <td> {`${new Date(marathon.startRegistrationDate).toLocaleDateString()}`}</td>
+                  <td>{`${new Date(marathon.endRegistrationDate).toLocaleDateString()}`}</td>
                   <td className="flex gap-2">
                     {/* Update button */}
                     <Link

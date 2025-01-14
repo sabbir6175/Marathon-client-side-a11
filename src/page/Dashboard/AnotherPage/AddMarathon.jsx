@@ -55,7 +55,6 @@ const AddMarathon = () => {
       },
       body: JSON.stringify({
         ...marathonData,
-        createdAt: new Date(),
         totalRegistrations: 0,
       }),
     })

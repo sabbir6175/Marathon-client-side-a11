@@ -36,7 +36,7 @@ const MarathonSection = () => {
                                 />
                                 {/* Event Date Badge */}
                                 <div className="absolute top-4 left-4 bg-green-500 text-white text-sm font-bold px-2 py-2 rounded">
-                                    Event: {data.marathonStartDate}
+                                    Event: {`${new Date(data.marathonStartDate).toDateString()}`}
                                 </div>
                             </div>
 
@@ -60,7 +60,7 @@ const MarathonSection = () => {
 
                                 {/* Registration Start */}
                                 <h3 className="text-sm font-semibold text-gray-800 mb-3">
-                                    Registration Start: {data.startRegistrationDate}
+                                    Registration Start:  {`${new Date(data.startRegistrationDate).toLocaleDateString()}`}
                                 </h3>
 
                                 {/* Event Description */}

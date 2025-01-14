@@ -7,20 +7,7 @@ const MarathonDetails = () => {
   const { id } = useParams();
   const marathon = useLoaderData();
 
-  //   const [marathon, setMarathon] = useState(null);
 
-  //   console.log(marathon)
-  //   useEffect(() => {
-  //     // Fetch marathon details
-  //     axios.get(`http://localhost:3000/AddMarathon/${id}`)
-  //       .then(response => {
-  //         setMarathon(response.data);
-  //       })
-  //       .catch(error => {
-  //         console.error('Error fetching marathon details:', error);
-  //         toast.error('Failed to load marathon details.');
-  //       });
-  //   }, [id]);
 
   //   {
   //     "_id": "677c1dfb00fa32250c957b02",
@@ -58,13 +45,13 @@ const MarathonDetails = () => {
             <h1 className="text-purple-500 font-bold text-lg">
               StartRegistrationDate :{" "}
             </h1>
-            <span> {marathon.startRegistrationDate}</span>
+            <span>  {`${new Date(marathon.startRegistrationDate).toLocaleDateString()}`}</span>
           </span>
           <span className="flex gap-2 text-base items-center">
             <h1 className="text-purple-500 font-bold text-lg">
               EndRegistrationDate :{" "}
             </h1>
-            <span> {marathon.endRegistrationDate}</span>
+            <span> {`${new Date(marathon.endRegistrationDate).toLocaleDateString()}`}</span>
           </span>
         </div>
         <div>
@@ -72,7 +59,7 @@ const MarathonDetails = () => {
             <h1 className="text-purple-500 font-bold text-lg">
               MarathonStartDate :{" "}
             </h1>
-            <span> {marathon.marathonStartDate}</span>
+            <span>{`${new Date(marathon.marathonStartDate).toLocaleDateString()}`}</span>
           </span>
           <span className="flex gap-2 text-base items-center">
             <h1 className="text-purple-500 font-bold text-lg">CreatedAt : </h1>
