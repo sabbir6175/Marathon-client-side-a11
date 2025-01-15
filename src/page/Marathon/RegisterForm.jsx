@@ -1,16 +1,30 @@
 import React, { useContext } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import AuthContext from "../../Context/AuthContext/AuthContext";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const RegisterForm = () => {
-    const marathonData = useLoaderData();
-    const {marathonTitle,marathonStartDate} = marathonData;
+  const { id } = useParams(); 
+    const [registerMarathon, setRegisterMarathon] = useState([])
     const { user} = useContext(AuthContext)
-    console.log(marathonData)
     const navigate = useNavigate()
+
+    useEffect(() => {
+      axios.get(`http://localhost:3000/AddMarathon/${id}`, { withCredentials: true })
+        .then((res) => {
+          setRegisterMarathon(res.data); 
+        })
+        .catch((error) => {
+          console.log(error); 
+          toast.error("Failed to fetch marathon details");
+        });
+    }, [id]);
+
 
         const handleRegistration =(e)=>{
             e.preventDefault();
@@ -52,10 +66,10 @@ const RegisterForm = () => {
   return (
     <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% py-10">
       <div className="max-w-md mx-auto  py-10 p-6 bg-base-100 shadow-2xl rounded-lg">
-        <h2 className="text-2xl font-bold text-center text-purple-600 mb-6">
+        <h2 className="text-2xl font-bold text-center text-black mb-6">
         Registration Form 
         </h2>
-        <form onSubmit={handleRegistration} className="flex flex-col gap-4">
+        <form onSubmit={handleRegistration} className="flex text-black flex-col gap-4">
             <label htmlFor="">
                 <span>Email : </span>
             </label>
@@ -75,7 +89,7 @@ const RegisterForm = () => {
             name="marathonTitle"
             placeholder="Marathon Title"
             readOnly
-            defaultValue={marathonTitle}
+            defaultValue={registerMarathon.marathonTitle}
             className="input input-bordered w-full"
           />
             <label htmlFor="">
@@ -84,7 +98,7 @@ const RegisterForm = () => {
           <input
             readOnly
             name="startDate"
-            defaultValue={marathonStartDate}
+            defaultValue={new Date(registerMarathon.marathonStartDate).toLocaleDateString()}
             className="input input-bordered w-full"
           />
            <label htmlFor="">

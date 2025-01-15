@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import AuthContext from '../../Context/AuthContext/AuthContext';
 import { toast } from 'react-toastify';
 import { FcGoogle } from 'react-icons/fc';
 
 const Register = () => {
-
-  
+  const location = useLocation()
+  const navigate = useNavigate();
   const {createUser, setUser, updateUserProfile,singWithGoogle} = useContext(AuthContext)
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -42,7 +42,7 @@ const Register = () => {
           });
           updateUserProfile({ displayName: name, photoURL: photo })
             .then(() => {
-              Navigate("/");
+              navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
               setErrorMessage(error, {
@@ -62,7 +62,7 @@ const Register = () => {
         .then(result => {
             setUser(result.user)
             toast.success('login successfully')
-            Navigate('/')
+            navigate(location?.state ? location.state : '/');
         })
         .catch(error => {
             toast.error(error.code) 

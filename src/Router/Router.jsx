@@ -35,8 +35,7 @@ import MyApplyList from "../page/Dashboard/AnotherPage/MyApplyList";
         },
         {
           path: "/marathon/reg/:id",
-          element: <PrivateRoute><RegisterForm></RegisterForm></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:3000/AddMarathon/${params.id}`)
+          element: <PrivateRoute><RegisterForm></RegisterForm></PrivateRoute>
         },
         {
           path:"/Dashboard",
@@ -69,6 +68,3 @@ import MyApplyList from "../page/Dashboard/AnotherPage/MyApplyList";
   ]);
 
   export default router
-
-  // const response = await axios.get(` http://localhost:5000/myMarathons?email=${user?.email}`, {withCredentials:true});
-  //               setMarathons(response.data);
