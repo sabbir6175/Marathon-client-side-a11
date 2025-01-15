@@ -25,7 +25,7 @@ const RegisterForm = () => {
             const message = form.message.value;
             const newRegistrationForm = {email, marathonTitle, startDate, firstName, lastName, contact, message} 
             console.log(newRegistrationForm )
-
+            
             
                    fetch("http://localhost:3000/registerMarathon", {
                       method: "POST",
@@ -95,6 +95,7 @@ const RegisterForm = () => {
             name="firstName"
             placeholder="Your Name"
             className="input input-bordered w-full"
+            required
           />
            <label htmlFor="">
                 <span> Last Name : </span>
@@ -104,6 +105,7 @@ const RegisterForm = () => {
             name="lastName"
             placeholder="Your Name"
             className="input input-bordered w-full"
+            required
           />
            <label htmlFor="">
                 <span> Contact Number : </span>
@@ -113,6 +115,7 @@ const RegisterForm = () => {
             name="contact"
             placeholder="Your Name"
             className="input input-bordered w-full"
+            required
           />
 
            <label htmlFor="">
@@ -122,6 +125,7 @@ const RegisterForm = () => {
             name="message"
             placeholder="Your Message"
             className="textarea textarea-bordered w-full"
+            required
           ></textarea>
           <button type="submit" className="btn btn-primary w-full">
             Submit

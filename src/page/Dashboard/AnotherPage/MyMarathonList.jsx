@@ -3,10 +3,22 @@ import { Link, useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
+import { useContext } from "react";
+import AuthContext from "../../../Context/AuthContext/AuthContext";
+import { useEffect } from "react";
 
 const MyMarathonList = () => {
+  const {user} = useContext(AuthContext)
+  console.log(user)
   const MyMarathon = useLoaderData();
-  const [myCampaign, setMyCampaign] = useState(MyMarathon);
+  const [myCampaign, setMyCampaign] = useState([]);
+
+  useEffect(() => {
+    if (user && MyMarathon) {
+        const filteredCampaigns = MyMarathon.filter(campaign => campaign.email === user.email);
+        setMyCampaign(filteredCampaigns);
+    }
+}, [user, MyMarathon]);
 
   const [marathonData, setMarathonData] = useState({
     marathonTitle: "",

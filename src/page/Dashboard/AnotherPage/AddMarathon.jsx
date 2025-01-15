@@ -5,12 +5,15 @@ import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { div } from "framer-motion/client";
+import { useContext } from "react";
+import AuthContext from "../../../Context/AuthContext/AuthContext";
 
 
 
 
 
 const AddMarathon = () => {
+  const {user} = useContext(AuthContext)
   const [marathonData, setMarathonData] = useState({
     marathonTitle: "",
     startRegistrationDate: new Date(),
@@ -20,6 +23,7 @@ const AddMarathon = () => {
     runningDistance: "10k",
     description: "",
     marathonImage: "",
+    email: user.email
   });
 
 
@@ -80,7 +84,7 @@ const AddMarathon = () => {
             <input
               type="text"
               name="title"
-              value={marathonData.title}
+              value={marathonData.marathonTitle}
               onChange={handleChange}
               className="input input-bordered w-full"
               required

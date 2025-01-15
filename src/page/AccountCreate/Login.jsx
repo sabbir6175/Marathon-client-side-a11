@@ -28,7 +28,7 @@ const Login = () => {
                 toast.error(error.code) 
             })
     }
-    const hanldeGoogleSingIn = () => {
+    const handleGoogleSingIn = () => {
       singWithGoogle()
         .then(result => {
             setUser(result.user)
@@ -67,7 +67,7 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
                 <br />
                 <div className='divider'>OR</div>
-                <button onClick={hanldeGoogleSingIn} className="btn btn-success"> <FcGoogle className='text-3xl' /> Sing with google</button>
+                <button onClick={handleGoogleSingIn} className="btn btn-success"> <FcGoogle className='text-3xl' /> Sing with google</button>
               </div>
              <div>
                  Don't have any account.<Link to={"/Register"} className='text-red-400'>create account</Link>

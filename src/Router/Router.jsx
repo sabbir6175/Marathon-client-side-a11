@@ -55,6 +55,7 @@ import MyApplyList from "../page/Dashboard/AnotherPage/MyApplyList";
             {
               path: "MyApplyList",
               element: <MyApplyList></MyApplyList>,
+              loader: ()=>fetch('http://localhost:3000/registerMarathon')
             },
           ]
         },
@@ -71,3 +72,6 @@ import MyApplyList from "../page/Dashboard/AnotherPage/MyApplyList";
   ]);
 
   export default router
+
+  // const response = await axios.get(` http://localhost:5000/myMarathons?email=${user?.email}`, {withCredentials:true});
+  //               setMarathons(response.data);
