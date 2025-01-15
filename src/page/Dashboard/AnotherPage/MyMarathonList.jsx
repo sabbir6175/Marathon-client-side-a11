@@ -65,10 +65,12 @@ const MyMarathonList = () => {
         if(data.modifiedCount > 0){
             Swal.fire({
                 title: 'Success!',
-                text: 'Campaign updated successfully',
+                text: 'Marathon updated successfully',
                 icon: 'success',
                 confirmButtonText: 'close'
               })
+             
+              setMarathonData(updatedCampaigns)
         }
     })
     
@@ -281,15 +283,13 @@ const MyMarathonList = () => {
                             <button type="submit" className="btn btn-warning w-full">
                               Update Marathon
                             </button>
-                            <div className="modal-action">
-                              <form method="dialog">
-                                {/* if there is a button in form, it will close the modal */}
-                                <button className="btn bg-success text-white">Close</button>
-                              </form>
-                            </div>
+                            
                           </form>
                         </div>
                       </div>
+                      <form method="dialog" className="modal-backdrop">
+                              <button>close</button>
+                        </form>
                     </dialog>
 
                     {/* Delete button */}
