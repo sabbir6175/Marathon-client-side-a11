@@ -1,19 +1,23 @@
-
 import { Link, Outlet, useLocation } from "react-router-dom";
 
-
 const Dashboard = () => {
-  const location = useLocation()
+  const location = useLocation();
+
+  // Function to check if the link is active
+  const isActive = (path) => {
+    return location.pathname === path ? "bg-cyan-500 text-white" : "text-black";
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex flex-1">
-        <div className="w-1/5 bg-cyan-400 p-4">
+        <div className="w-2/6 lg:w-1/5 shadow-2xl bg-green-200 border-dotted p-4">
           <nav>
             <ul className="space-y-4">
               <li>
                 <Link
                   to={"AddMarathon"}
-                  className="w-full text-left p-2"
+                  className={`w-full font-bold text-left rounded-sm md:p-2 ${isActive('/Dashboard/AddMarathon')}`}
                 >
                   Add Marathon
                 </Link>
@@ -21,7 +25,7 @@ const Dashboard = () => {
               <li>
                 <Link
                   to={"MyMarathonList"}
-                  className="w-full text-left p-2"
+                  className={`w-full font-bold text-left rounded-sm md:p-2 ${isActive('/Dashboard/MyMarathonList')}`}
                 >
                   My Marathon List
                 </Link>
@@ -29,7 +33,7 @@ const Dashboard = () => {
               <li>
                 <Link
                   to={"MyApplyList"}
-                  className="w-full text-left p-2"
+                  className={`w-full font-bold text-left rounded-sm md:p-2 ${isActive('/Dashboard/MyApplyList')}`}
                 >
                   My Apply List
                 </Link>
@@ -37,16 +41,14 @@ const Dashboard = () => {
             </ul>
           </nav>
         </div>
-        <div className="w-4/5 p-4 bg-pink-50">
+        <div className="w-4/5 md:p-4 bg-pink-50 pl-5">
           {location.pathname === '/Dashboard' && (
-              <h1 className="text-2xl font-semibold text-center">
-                No Data Select a page in the sidebar
-              </h1>
-            )}
-         
-            {/* <h1 className="text-2xl font-semibold text-center">No Data Select a page in the sidebar</h1> */}
+            <h1 className="text-2xl font-semibold text-center">
+              No Data Select a page in the sidebar
+            </h1>
+          )}
           {/* Render content based on route */}
-          <Outlet></Outlet>
+          <Outlet />
         </div>
       </div>
     </div>

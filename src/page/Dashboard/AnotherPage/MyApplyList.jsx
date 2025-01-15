@@ -2,13 +2,28 @@ import React, { useState, useEffect, useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import AuthContext from "../../../Context/AuthContext/AuthContext";
 import Swal from "sweetalert2";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const MyApplyList = () => {
   const { user } = useContext(AuthContext);
-  const MyMarathon = useLoaderData();
+ const [MyMarathon, setMyMarathon] = useState(null);
   const [myCampaign, setMyCampaign] = useState([]);
-  const [selectedMarathon, setSelectedMarathon] = useState(null); // For storing the selected marathon
-  const [searchQuery, setSearchQuery] = useState(""); // For storing the search input
+  const [selectedMarathon, setSelectedMarathon] = useState(null); 
+  const [searchQuery, setSearchQuery] = useState(""); 
+
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/registerMarathon', { withCredentials: true })
+      .then((res) => {
+        setMyMarathon(res.data); 
+      })
+      .catch((error) => {
+        console.log(error); 
+        toast.error("Failed to fetch marathon details");
+      });
+  }, []);
+
 
   // Filter campaigns for the logged-in user
   useEffect(() => {

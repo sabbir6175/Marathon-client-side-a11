@@ -18,7 +18,7 @@ const MarathonSection = () => {
     return (
         <>
             <div>
-            <h1 className="text-red-500 text-center my-5 font-bold text-4xl">
+            <h1 className="text-red-500 text-center my-8 md:my-16 font-bold text-4xl">
                   Marathon
                 </h1>
             </div>

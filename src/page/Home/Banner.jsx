@@ -34,9 +34,9 @@ export default function Banner() {
 {/* https://i.ibb.co.com/DDMmg0x/download-12.jpg */}
 
 
-        <SwiperSlide><img className='bg-cover bg-no-repeat w-full h-96' src="https://i.ibb.co.com/VNwtwjx/download-13.jpg" alt="" /></SwiperSlide>
-        <SwiperSlide><img className='bg-cover w-full h-96' src="https://i.ibb.co.com/VNwtwjx/download-13.jpg" alt="" /></SwiperSlide>
-        <SwiperSlide><img className='bg-cover w-full h-96' src="https://i.ibb.co.com/VNwtwjx/download-13.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img className='bg-cover bg-no-repeat w-full h-72 md:h-80 lg:h-96' src="https://i.ibb.co.com/VNwtwjx/download-13.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img className='bg-cover w-full h-72 md:h-80   lg:h-96' src="https://i.ibb.co.com/VNwtwjx/download-13.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img className='bg-cover w-full h-72  md:h-80  lg:h-96' src="https://i.ibb.co.com/VNwtwjx/download-13.jpg" alt="" /></SwiperSlide>
         
       </Swiper>
     </>

@@ -4,16 +4,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { div } from "framer-motion/client";
 import { useContext } from "react";
 import AuthContext from "../../../Context/AuthContext/AuthContext";
 
-
-
-
-
 const AddMarathon = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const [marathonData, setMarathonData] = useState({
     marathonTitle: "",
     startRegistrationDate: new Date(),
@@ -25,8 +20,6 @@ const AddMarathon = () => {
     marathonImage: "",
     email: user.email
   });
-
-
 
   const navigate = useNavigate();
 
@@ -51,7 +44,6 @@ const AddMarathon = () => {
 
     console.log(marathonData);
     // Send the data to the backend to create a new marathon
-
     fetch("http://localhost:3000/marathon", {
       method: "POST",
       headers: {
@@ -64,26 +56,20 @@ const AddMarathon = () => {
         setMarathonData(data);
         console.log(data);
         toast.success("Marathon created successfully!");
-        navigate('/')
-
+        navigate('/');
       });
   };
 
   return (
-    <div className="p-10 bg-red-400 rounded-md">
-      <div className="max-w-4xl  bg-cyan-300 text-red-500 rounded-md shadow-sm mx-auto p-6">
-        <h1
-          className="text-3xl font-bold text-center
-       mb-6"
-        >
-          Create Marathon Event
-        </h1>
+    <div className="p-5 lg:p-10 rounded-md">
+      <div className="max-w-4xl bg-cyan-300 text-black rounded-md shadow-sm mx-auto p-6">
+        <h1 className="text-center font-bold text-3xl mb-5 text-black">Create Marathon Event</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block font-semibold mb-2">Marathon Title</label>
             <input
               type="text"
-              name="title"
+              name="marathonTitle"  // Change name here to match the state key
               value={marathonData.marathonTitle}
               onChange={handleChange}
               className="input input-bordered w-full"
@@ -93,42 +79,32 @@ const AddMarathon = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
             <div>
-              <label className="block font-semibold mb-2">
-                Start Registration Date
-              </label>
+              <label className="block font-semibold mb-2">Start Registration Date</label>
               <DatePicker
                 selected={marathonData.startRegistrationDate}
-                onChange={(date) =>
-                  handleDateChange(date, "startRegistrationDate")
-                }
+                onChange={(date) => handleDateChange(date, "startRegistrationDate")}
                 className="input input-bordered w-full"
-               dateFormat="yyyy-MM-dd"
+                dateFormat="yyyy-MM-dd"
               />
             </div>
 
             <div>
-              <label className="block font-semibold mb-2">
-                End Registration Date
-              </label>
+              <label className="block font-semibold mb-2">End Registration Date</label>
               <DatePicker
                 selected={marathonData.endRegistrationDate}
-                onChange={(date) =>
-                  handleDateChange(date, "endRegistrationDate")
-                }
+                onChange={(date) => handleDateChange(date, "endRegistrationDate")}
                 className="input input-bordered w-full"
-                 dateFormat="yyyy-MM-dd"
+                dateFormat="yyyy-MM-dd"
               />
             </div>
 
             <div>
-              <label className="block font-semibold mb-2">
-                Marathon Start Date
-              </label>
+              <label className="block font-semibold mb-2">Marathon Start Date</label>
               <DatePicker
                 selected={marathonData.marathonStartDate}
                 onChange={(date) => handleDateChange(date, "marathonStartDate")}
                 className="input input-bordered w-full"
-                 dateFormat="yyyy-MM-dd"
+                dateFormat="yyyy-MM-dd"
               />
             </div>
           </div>
@@ -172,9 +148,7 @@ const AddMarathon = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block font-semibold mb-2">
-              Marathon Image URL
-            </label>
+            <label className="block font-semibold mb-2">Marathon Image URL</label>
             <input
               type="text"
               name="marathonImage"

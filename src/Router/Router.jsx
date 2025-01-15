@@ -31,8 +31,7 @@ import MyApplyList from "../page/Dashboard/AnotherPage/MyApplyList";
         },
         {
           path: "/marathon/:id",
-          element: <PrivateRoute><MarathonDetails></MarathonDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:3000/AddMarathon/${params.id}`)
+          element: <PrivateRoute><MarathonDetails></MarathonDetails></PrivateRoute>
         },
         {
           path: "/marathon/reg/:id",
@@ -49,13 +48,11 @@ import MyApplyList from "../page/Dashboard/AnotherPage/MyApplyList";
             },
             {
               path: "MyMarathonList",
-              element: <MyMarathonList></MyMarathonList> ,
-              loader: ()=>fetch('http://localhost:3000/AddMarathon')
+              element: <MyMarathonList></MyMarathonList> 
             },
             {
               path: "MyApplyList",
-              element: <MyApplyList></MyApplyList>,
-              loader: ()=>fetch('http://localhost:3000/registerMarathon')
+              element: <MyApplyList></MyApplyList>
             },
           ]
         },

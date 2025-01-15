@@ -10,8 +10,7 @@ const Marathon = () => {
 
   useEffect(() => {
     // Fetch marathons from backend API with the sorting option
-    axios
-      .get(`http://localhost:3000/AddMarathon?sortOrder=${sortOrder}`)
+    axios.get(`http://localhost:3000/AddMarathon?sortOrder=${sortOrder}`, {withCredentials: true} )
       .then((response) => {
         setMarathons(response.data);
         setLoading(false);
