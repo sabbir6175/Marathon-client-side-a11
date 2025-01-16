@@ -72,7 +72,7 @@ const Marathon = () => {
               </p>
               <p>{`Registration End: ${new Date(marathon.endRegistrationDate).toLocaleDateString()}`}</p>
               <div className="card-actions">
-                <Link to={`/marathon/${marathon._id}`} className="btn text-red-500 btn-warning">
+                <Link to={`/marathon/${marathon._id}`} className="btn text-red-400 btn-warning">
                   See Details
                 </Link>
               </div>

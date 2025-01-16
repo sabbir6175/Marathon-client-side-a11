@@ -113,7 +113,7 @@ const Register = () => {
                 errorMessage && <p className="text-red-400">{errorMessage}</p>
               }
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Registration</button>
+                <button className="btn btn-warning font-bold text-white">Registration</button>
                 <br />
                 <div className='divider'>OR</div>
                 <button onClick={handleGoogleSingIn} className="btn  btn-success"><FcGoogle className='text-3xl' /> Sing with google</button>

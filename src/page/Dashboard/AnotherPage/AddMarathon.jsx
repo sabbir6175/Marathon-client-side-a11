@@ -159,7 +159,7 @@ const AddMarathon = () => {
             />
           </div>
 
-          <button type="submit" className="btn bg-red-500 w-full">
+          <button type="submit" className="btn bg-red-400 w-full">
             Create Marathon
           </button>
         </form>

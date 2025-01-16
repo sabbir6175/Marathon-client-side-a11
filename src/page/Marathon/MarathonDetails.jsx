@@ -108,7 +108,7 @@ const MarathonDetails = () => {
         </span>
       </div>
       <Link to={`/marathon/reg/${marathon._id}`}>
-        <button className="btn bg-red-500 w-full text-white">Register Now</button>
+        <button className="btn bg-red-400 w-full text-white">Register Now</button>
       </Link>
     </div>
   );

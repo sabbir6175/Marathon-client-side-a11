@@ -70,7 +70,7 @@ const MarathonSection = () => {
 
                                 {/* See Details Button */}
                                 <Link to={`/marathon/${data._id}`} >
-                                    <button className="mt-4 btn bg-red-500 text-white px-4 py-2 rounded-lg  transition-colors duration-300">
+                                    <button className="mt-4 btn bg-red-400 text-white px-4 py-2 rounded-lg  transition-colors duration-300">
                                         See Details
                                     </button>
                                 </Link>

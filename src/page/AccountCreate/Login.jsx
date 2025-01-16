@@ -82,7 +82,7 @@ const Login = () => {
               <input type="password" name='password' placeholder="password" className="input input-bordered" required />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-warning">Login</button>
+              <button className="btn btn-warning font-bold text-white">Login</button>
               <br />
               <div className='divider'>OR</div>
               <button onClick={handleGoogleSingIn} className="btn btn-success">
