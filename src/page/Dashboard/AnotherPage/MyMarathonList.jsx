@@ -15,7 +15,7 @@ const MyMarathonList = () => {
 
 
  useEffect(() => {
-    axios.get(`http://localhost:3000/AddMarathon`, { withCredentials: true })
+    axios.get(`https://marathon-management-system-assignment-11.vercel.app/AddMarathon`)
       .then((res) => {
         setMyMarathon(res.data); 
       })
@@ -89,7 +89,7 @@ const MyMarathonList = () => {
       return;
     }
 
-    fetch(`http://localhost:3000/AddMarathon/${marathonData._id}`, {
+    fetch(`https://marathon-management-system-assignment-11.vercel.app/AddMarathon/${marathonData._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -159,7 +159,7 @@ const MyMarathonList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/AddMarathon/${id}`, {
+        fetch(`https://marathon-management-system-assignment-11.vercel.app/AddMarathon/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

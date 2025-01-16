@@ -1,7 +1,7 @@
 # Project Name: Marathon Management System
 
 ## Live Link
-[https://fir-auth-assignment-09.web.app/](https://fir-auth-assignment-09.web.app/)
+[]()
 
 ## Marathon Management System Website Features
 - Event Creation and Management: Users can easily create, update, or delete marathon events, ensuring organizers have full control over their events.

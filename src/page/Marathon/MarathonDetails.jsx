@@ -11,7 +11,7 @@ const MarathonDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/AddMarathon/${id}`, { withCredentials: true })
+      .get(`https://marathon-management-system-assignment-11.vercel.app/AddMarathon/${id}`)
       .then((res) => {
         setMarathon(res.data); 
       })

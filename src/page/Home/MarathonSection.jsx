@@ -5,7 +5,7 @@ const MarathonSection = () => {
     const [marathonData, SetMarathonData] = useState([]);  // Default to empty array
 
     useEffect(() => {
-        fetch('http://localhost:3000/AddMarathon/limit')
+        fetch('https://marathon-management-system-assignment-11.vercel.app/AddMarathon/limit')
             .then(res => res.json())
             .then(data => {
                 SetMarathonData(data);
@@ -70,7 +70,7 @@ const MarathonSection = () => {
 
                                 {/* See Details Button */}
                                 <Link to={`/marathon/${data._id}`} >
-                                    <button className="mt-4 btn btn-warning text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                                    <button className="mt-4 btn bg-red-500 text-white px-4 py-2 rounded-lg  transition-colors duration-300">
                                         See Details
                                     </button>
                                 </Link>

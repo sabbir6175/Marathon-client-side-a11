@@ -14,10 +14,10 @@ const MyApplyList = () => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3000/registerMarathon', { withCredentials: true })
+    axios.get('https://marathon-management-system-assignment-11.vercel.app/registerMarathon')
       .then((res) => {
         setMyMarathon(res.data); 
-      })
+      })  
       .catch((error) => {
         console.log(error); 
         toast.error("Failed to fetch marathon details");
@@ -71,7 +71,7 @@ const MyApplyList = () => {
     };
 
     // Send the updated data to the server
-    fetch(`http://localhost:3000/registerMarathon/${selectedMarathon._id}`, {
+    fetch(`https://marathon-management-system-assignment-11.vercel.app/registerMarathon/${selectedMarathon._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ const MyApplyList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/registerMarathon/${id}`, {
+        fetch(`https://marathon-management-system-assignment-11.vercel.app/registerMarathon/${id}`, {
           method: "DELETE",
         })
         .then((res) => res.json())

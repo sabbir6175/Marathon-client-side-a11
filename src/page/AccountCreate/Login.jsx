@@ -28,11 +28,11 @@ const Login = () => {
         // Redirect after login
         navigate(location?.state ? location.state : '/');
         
-        const user = { email: email };
-        axios.post('http://localhost:3000/jwt', user, { withCredentials: true })
-          .then(res => {
-            console.log(res.data);
-          });
+        // const user = { email: email };
+        // axios.post('https://marathon-management-system-assignment-11.vercel.app/jwt', user, { withCredentials: true })
+        //   .then(res => {
+        //     console.log(res.data);
+        //   });
 
       })
       .catch(error => {
@@ -50,11 +50,11 @@ const Login = () => {
         // Redirect after Google login
         navigate(location?.state ? location.state : '/');
         
-        const user = { email: result.user.email }; // Make sure to use the actual email from the result
-        axios.post('http://localhost:3000/jwt', user, { withCredentials: true })
-          .then(res => {
-            console.log(res.data);
-          });
+        // const user = { email: result.user.email }; // Make sure to use the actual email from the result
+        // axios.post('https://marathon-management-system-assignment-11.vercel.app/jwt', user, { withCredentials: true })
+        //   .then(res => {
+        //     console.log(res.data);
+        //   });
       })
       .catch(error => {
         toast.error(error.message);
@@ -82,7 +82,7 @@ const Login = () => {
               <input type="password" name='password' placeholder="password" className="input input-bordered" required />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-warning">Login</button>
               <br />
               <div className='divider'>OR</div>
               <button onClick={handleGoogleSingIn} className="btn btn-success">

@@ -84,12 +84,12 @@ const Navbar = () => {
                   <div className='flex items-center gap-2'>
                     
                     <img src={user?.photoURL} className='w-10 h-10 rounded-full' alt="" />
-                    <button  onClick={handleSingOut} className='btn btn-sm lg:btn-md text-white bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  '>Log Out</button>
+                    <button  onClick={handleSingOut} className='btn btn-sm lg:btn-md text-white bg-red-500  '>Log Out</button>
                   </div>
                 </Link>
               </> : <>
-              <Link to={"/login"} className="btn btn-sm lg:btn-md text-white bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  mr-2">Login</Link>
-              <Link to={"/Register"} className="btn  btn-sm lg:btn-md text-white bg-gradient-to-r from-cyan-400 from-10% via-sky-500 via-30% to-emerald-500 to-90% ">Register</Link>
+              <Link to={"/login"} className="btn btn-sm lg:btn-md text-white bg-red-500  mr-2">Login</Link>
+              <Link to={"/Register"} className="btn  btn-sm lg:btn-md text-white  bg-cyan-400 ">Register</Link>
             </>
           }
 

@@ -15,7 +15,7 @@ const RegisterForm = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-      axios.get(`http://localhost:3000/AddMarathon/${id}`, { withCredentials: true })
+      axios.get(`https://marathon-management-system-assignment-11.vercel.app/AddMarathon/${id}`)
         .then((res) => {
           setRegisterMarathon(res.data); 
         })
@@ -41,7 +41,7 @@ const RegisterForm = () => {
             console.log(newRegistrationForm )
             
             
-                   fetch("http://localhost:3000/registerMarathon", {
+                   fetch("https://marathon-management-system-assignment-11.vercel.app/registerMarathon", {
                       method: "POST",
                       headers: {
                         "Content-Type": "application/json",
@@ -141,7 +141,7 @@ const RegisterForm = () => {
             className="textarea textarea-bordered w-full"
             required
           ></textarea>
-          <button type="submit" className="btn btn-primary w-full">
+          <button type="submit" className="btn bg-red-500 w-full">
             Submit
           </button>
         </form>

@@ -44,7 +44,7 @@ const AddMarathon = () => {
 
     console.log(marathonData);
     // Send the data to the backend to create a new marathon
-    fetch("http://localhost:3000/marathon", {
+    fetch("https://marathon-management-system-assignment-11.vercel.app/marathon", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -159,7 +159,7 @@ const AddMarathon = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-warning w-full">
+          <button type="submit" className="btn bg-red-500 w-full">
             Create Marathon
           </button>
         </form>
