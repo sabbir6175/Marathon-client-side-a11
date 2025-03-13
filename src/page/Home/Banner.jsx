@@ -34,9 +34,9 @@ export default function Banner() {
 {/* https://i.ibb.co.com/DDMmg0x/download-12.jpg */}
 
 
-        <SwiperSlide><img className='bg-cover bg-no-repeat w-full h-72 md:h-80 lg:h-96' src="https://i.ibb.co.com/VNwtwjx/download-13.jpg" alt="" /></SwiperSlide>
-        <SwiperSlide><img className='bg-cover w-full h-72 md:h-80   lg:h-96' src="https://i.ibb.co.com/VNwtwjx/download-13.jpg" alt="" /></SwiperSlide>
-        <SwiperSlide><img className='bg-cover w-full h-72  md:h-80  lg:h-96' src="https://i.ibb.co.com/VNwtwjx/download-13.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img className='bg-cover  bg-no-repeat w-full h-72 md:h-80 lg:h-[500px]' src="https://i.ibb.co.com/bg9VXYQc/banner1.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img className='bg-cover  bg-no-repeat w-full h-72 md:h-80 lg:h-[500px]' src="https://i.ibb.co.com/Dyc3Qxt/istockphoto-2173762770-612x612.webp" alt="" /></SwiperSlide>
+        <SwiperSlide><img className='bg-cover  bg-no-repeat w-full h-72 md:h-80 lg:h-[500px]' src="https://i.ibb.co.com/VcMsGL2C/istockphoto-1439744187-612x612.webp" alt="" /></SwiperSlide>
         
       </Swiper>
     </>

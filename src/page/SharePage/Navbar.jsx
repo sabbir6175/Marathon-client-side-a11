@@ -37,8 +37,8 @@ const Navbar = () => {
     
 
   return (
-    <div className=" sticky top-0 backdrop-blur-md shadow-md  bg-green-100 z-50">
-      <div class="navbar ">
+    <div className="fixed z-50 w-full  backdrop-blur-md shadow-md  bg-gradient-to-r from-[#96fbc4] to-[#FFE6FA]  md:px-10">
+      <div class="navbar">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -65,7 +65,7 @@ const Navbar = () => {
             </ul>
           </div>
          <div className="flex gap-2 items-center">
-         <img className="w-12 h-12 rounded-full border-2" src="https://i.ibb.co.com/M1RpLHr/download-1.png" alt="" />
+         <img className="w-12 hidden lg:block h-12 rounded-full border-2" src="https://i.ibb.co.com/M1RpLHr/download-1.png" alt="" />
          <motion.h1 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }} 
                 transition={{ type: 'spring', stiffness: 300 }} className="text-red-400 uppercase font-bold" >Marathon</motion.h1>
@@ -84,11 +84,11 @@ const Navbar = () => {
                   <div className='flex items-center gap-2'>
                     
                     <img src={user?.photoURL} className='w-10 h-10 rounded-full' alt="" />
-                    <button  onClick={handleSingOut} className='btn btn-sm lg:btn-md text-white bg-red-500  '>Log Out</button>
+                    <button  onClick={handleSingOut} className='btn btn-sm lg:btn-md text-black bg-white  '>Log Out</button>
                   </div>
                 </Link>
               </> : <>
-              <Link to={"/login"} className="btn btn-sm lg:btn-md text-white bg-red-500  mr-2">Login</Link>
+              <Link to={"/login"} className="btn btn-sm lg:btn-md text-white bg-gray-600  mr-2">Login</Link>
               <Link to={"/Register"} className="btn  btn-sm lg:btn-md text-white  bg-cyan-400 ">Register</Link>
             </>
           }
