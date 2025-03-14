@@ -180,7 +180,7 @@ const MyMarathonList = () => {
 
   return (
     <div className=" pb-20">
-      <h1 className="text-center font-bold text-3xl my-10 text-black">
+      <h1 className="text-center font-bold text-2xl md:text-3xl my-10 text-black">
         My Marathon List
       </h1>
 

@@ -136,12 +136,12 @@ const MyApplyList = () => {
 
   return (
     <div className=" pb-20">
-      <h1 className="text-center font-bold text-3xl my-10 text-black">
+      <h1 className="text-center font-bold text-2xl md:text-3xl my-10 text-black">
         My Apply List ({filteredMarathons.length})
       </h1>
        
-        <div className="table md:w-3/4 mx-auto">
-            <span className="text-2xl font-bold">Search: </span>
+        <div className="table lg:w-3/4 mx-auto">
+            <span className="text-lg ml-5 md:text-2xl font-bold">Search: </span>
             <input
               type="search"
               className="border-2 border-black px-2 py-2 w-48 md:w-72 mb-5 rounded-md"
@@ -150,7 +150,7 @@ const MyApplyList = () => {
               onChange={handleSearchChange}
             />
         </div>
-      <div className="">
+      <div className="px-2">
         <div className="overflow-x-auto">
           <table className="table w-3/4 mx-auto ">
             <thead className="bg-green-200 text-black font-bold ">
@@ -287,7 +287,7 @@ const MyApplyList = () => {
           </table>
         
             {filteredMarathons.length === 0 && (
-                <div className="text-center text-red-500 font-bold mt-4">
+                <div className="text-center text-red-500 font-normal text-sm mt-4">
                 No Marathon found matching your search.
                 </div>
             )}

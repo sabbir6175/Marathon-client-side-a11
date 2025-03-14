@@ -62,8 +62,8 @@ const AddMarathon = () => {
 
   return (
     <div className="p-5 lg:p-10 rounded-md">
-      <div className="max-w-4xl  text-black rounded-md shadow-sm mx-auto p-6">
-        <h1 className="text-center font-bold text-3xl mb-5 text-black">Create Marathon Event</h1>
+      <div className="max-w-4xl  text-black rounded-md shadow-sm mx-auto md:p-6">
+        <h1 className="text-center font-bold text-2xl md:text-3xl mb-5 text-black">Create Marathon Event</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block font-semibold mb-2">Marathon Title</label>
@@ -169,3 +169,4 @@ const AddMarathon = () => {
 };
 
 export default AddMarathon;
+

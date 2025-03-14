@@ -37,24 +37,7 @@ import MyApplyList from "../page/Dashboard/AnotherPage/MyApplyList";
           path: "/marathon/reg/:id",
           element: <PrivateRoute><RegisterForm></RegisterForm></PrivateRoute>
         },
-        {
-          path:"/Dashboard",
-          element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
-          children: [
-            {
-              path: "AddMarathon",
-              element: <AddMarathon></AddMarathon>,
-            },
-            {
-              path: "MyMarathonList",
-              element: <MyMarathonList></MyMarathonList> 
-            },
-            {
-              path: "MyApplyList",
-              element: <MyApplyList></MyApplyList>
-            },
-          ]
-        },
+      
         {
           path: "/login",
           element: <Login></Login>
@@ -63,6 +46,24 @@ import MyApplyList from "../page/Dashboard/AnotherPage/MyApplyList";
           path: "/Register",
           element: <Register></Register>
         }
+      ]
+    },
+    {
+      path:"/Dashboard",
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+      children: [
+        {
+          path: "AddMarathon",
+          element: <AddMarathon></AddMarathon>,
+        },
+        {
+          path: "MyMarathonList",
+          element: <MyMarathonList></MyMarathonList> 
+        },
+        {
+          path: "MyApplyList",
+          element: <MyApplyList></MyApplyList>
+        },
       ]
     },
   ]);
