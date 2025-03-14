@@ -37,6 +37,7 @@ export default function Banner() {
         <SwiperSlide><img className='bg-cover  bg-no-repeat w-full h-72 md:h-80 lg:h-[500px]' src="https://i.ibb.co.com/bg9VXYQc/banner1.jpg" alt="" /></SwiperSlide>
         <SwiperSlide><img className='bg-cover  bg-no-repeat w-full h-72 md:h-80 lg:h-[500px]' src="https://i.ibb.co.com/Dyc3Qxt/istockphoto-2173762770-612x612.webp" alt="" /></SwiperSlide>
         <SwiperSlide><img className='bg-cover  bg-no-repeat w-full h-72 md:h-80 lg:h-[500px]' src="https://i.ibb.co.com/VcMsGL2C/istockphoto-1439744187-612x612.webp" alt="" /></SwiperSlide>
+        <SwiperSlide><img className='bg-cover  bg-no-repeat w-full h-72 md:h-80 lg:h-[500px]' src="https://i.ibb.co.com/TxSHmc4K/happy-athletic-women-running-a-marathon-and-giving-high-five-to-each-other.jpg" alt="" /></SwiperSlide>
         
       </Swiper>
     </>

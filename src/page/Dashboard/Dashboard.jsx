@@ -5,7 +5,7 @@ const Dashboard = () => {
 
   // Function to check if the link is active
   const isActive = (path) => {
-    return location.pathname === path ? "bg-cyan-500 text-white" : "text-black";
+    return location.pathname === path ? "bg-red-300 text-black" : "text-black";
   };
 
   return (

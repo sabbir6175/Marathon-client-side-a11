@@ -60,37 +60,37 @@ const MarathonDetails = () => {
           alt="Marathon"
         />
       </div>
-      <h1 className="text-2xl font-bold my-3 mx-2">{marathon.marathonTitle}</h1>
+      <h1 className="text-2xl text-black font-bold my-3 mx-2">{marathon.marathonTitle}</h1>
       <div className="flex flex-col lg:flex-row md:gap-5 px-2 justify-between">
         <div>
           <span className="flex gap-2 text-base items-center">
-            <h1 className="text-purple-500 font-bold text-lg">Location: </h1>
+            <h1 className="text-black font-bold text-lg">Location: </h1>
             <span>{marathon.location}</span>
           </span>
           <span className="flex gap-2 text-base items-center">
-            <h1 className="text-purple-500 font-bold text-lg">Running Distance: </h1>
+            <h1 className="text-black font-bold text-lg">Running Distance: </h1>
             <span>{marathon.runningDistance}</span>
           </span>
           <span className="flex gap-2 text-base items-center">
-            <h1 className="text-purple-500 font-bold text-lg">Start Registration Date: </h1>
+            <h1 className="text-black font-bold text-lg">Start Registration Date: </h1>
             <span>{new Date(marathon.startRegistrationDate).toLocaleDateString()}</span>
           </span>
           <span className="flex gap-2 text-base items-center">
-            <h1 className="text-purple-500 font-bold text-lg">End Registration Date: </h1>
+            <h1 className="text-black font-bold text-lg">End Registration Date: </h1>
             <span>{new Date(marathon.endRegistrationDate).toLocaleDateString()}</span>
           </span>
         </div>
         <div>
           <span className="flex gap-2 text-base items-center">
-            <h1 className="text-purple-500 font-bold text-lg">Marathon Start Date: </h1>
+            <h1 className="text-black font-bold text-lg">Marathon Start Date: </h1>
             <span>{new Date(marathon.marathonStartDate).toLocaleDateString()}</span>
           </span>
           <span className="flex gap-2 text-base items-center">
-            <h1 className="text-purple-500 font-bold text-lg">Created At: </h1>
+            <h1 className="text-black font-bold text-lg">Created At: </h1>
             <span>{new Date(marathon.createdAt).toDateString()}</span>
           </span>
           <span className="flex gap-2 text-base items-center">
-            <h1 className="text-purple-500 font-bold">Total Registration Count: </h1>
+            <h1 className="text-black font-bold">Total Registration Count: </h1>
             <span>{marathon.totalRegistrationCount}</span>
           </span>
         </div>
@@ -103,12 +103,12 @@ const MarathonDetails = () => {
       </div>
       <div className="my-5">
         <span className="flex gap-2 text-base items-center">
-          <h1 className="text-purple-500 font-bold text-lg">Description: </h1>
+          <h1 className="text-black font-bold text-lg">Description: </h1>
           <span>{marathon.description}</span>
         </span>
       </div>
       <Link to={`/marathon/reg/${marathon._id}`}>
-        <button className="btn bg-red-400 w-full text-white">Register Now</button>
+        <button className="btn bg-[#96fbc4] w-full text-black">Register Now</button>
       </Link>
     </div>
   );

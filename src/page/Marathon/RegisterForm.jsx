@@ -64,9 +64,9 @@ const RegisterForm = () => {
 
 
   return (
-    <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% py-10">
-      <div className="max-w-md mx-auto  py-10 p-6 bg-base-100 shadow-2xl rounded-lg">
-        <h2 className="text-2xl font-bold text-center text-black mb-6">
+    <div className=" bg-white py-10">
+      <div className="max-w-md lg:max-w-3xl mx-auto  py-10 p-6 bg-base-100 shadow-xl rounded-lg">
+        <h2 className="text-2xl font-bold text-center text-red-400 mb-6">
         Registration Form 
         </h2>
         <form onSubmit={handleRegistration} className="flex text-black flex-col gap-4">
@@ -141,7 +141,7 @@ const RegisterForm = () => {
             className="textarea textarea-bordered w-full"
             required
           ></textarea>
-          <button type="submit" className="btn bg-red-500 w-full">
+          <button type="submit" className="btn bg-[#96fbc4] w-full">
             Submit
           </button>
         </form>

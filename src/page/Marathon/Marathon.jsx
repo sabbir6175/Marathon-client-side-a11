@@ -33,7 +33,7 @@ const Marathon = () => {
     <div className="p-4">
       {/* Sorting Dropdown */}
       <div className="mb-5 text-center">
-        <h1 className="text-3xl font-bold mb-2 text-orange-400">All Marathon</h1>
+        <h1 className="text-3xl font-bold mb-2 text-red-400">All Marathon</h1>
         <label className="text-lg font-semibold ">Sort By </label>
         <br />
         <select
@@ -55,16 +55,16 @@ const Marathon = () => {
           >
               <div className="relative overflow-hidden group">
                   <img
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-48 object-cover group-hover:scale-110 rounded-t-md transition-transform duration-500"
                       src={marathon.marathonImage}
                       alt="Marathon"
                   />
                   {/* Event Date Badge */}
-                  <div className="absolute top-4 left-4 bg-green-500 text-white text-sm font-bold px-2 py-2 rounded">
-                      Event: {`${new Date(marathon.marathonStartDate).toDateString()}`}
+                  <div className="absolute top-4  text-red-400 text-sm font-bold px-2 py-2 rounded">
+                    {`${new Date(marathon.marathonStartDate).toDateString()}`}
                   </div>
               </div>
-            <div className="card-body">
+            <div className="card-body p-2">
               <h2 className="card-title text-xl font-bold">{marathon.marathonTitle}</h2>
               <p>Location : {marathon.location}</p>
               <p>
@@ -72,7 +72,7 @@ const Marathon = () => {
               </p>
               <p>{`Registration End: ${new Date(marathon.endRegistrationDate).toLocaleDateString()}`}</p>
               <div className="card-actions">
-                <Link to={`/marathon/${marathon._id}`} className="btn text-red-400 btn-warning">
+                <Link to={`/marathon/${marathon._id}`} className="mt-4 btn bg-[#96fbc4] text-black font-medium px-4 py-2 rounded-lg  transition-colors duration-300">
                   See Details
                 </Link>
               </div>
