@@ -48,7 +48,7 @@ const UpcomingMarathon = () => {
           <h1 class="text-2xl md:text-4xl lg:text-4xl font-bold my-20">
             Upcoming Marathons
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-3 md:px-10">
   {marathon.map((marathon, index) => (
     <div
       key={index}

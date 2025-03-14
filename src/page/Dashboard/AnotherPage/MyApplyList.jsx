@@ -135,8 +135,8 @@ const MyApplyList = () => {
   };
 
   return (
-    <div className="bg-red-50 pb-20">
-      <h1 className="text-center font-bold text-3xl my-10 text-cyan-600">
+    <div className=" pb-20">
+      <h1 className="text-center font-bold text-3xl my-10 text-black">
         My Apply List ({filteredMarathons.length})
       </h1>
        
@@ -152,8 +152,8 @@ const MyApplyList = () => {
         </div>
       <div className="">
         <div className="overflow-x-auto">
-          <table className="table w-3/4 mx-auto">
-            <thead className="bg-cyan-500 text-white">
+          <table className="table w-3/4 mx-auto ">
+            <thead className="bg-green-200 text-black font-bold ">
               <tr>
                 <th className="px-4 py-2 text-left">No : </th>
                 <th className="px-4 py-2 text-left">Marathon Title</th>

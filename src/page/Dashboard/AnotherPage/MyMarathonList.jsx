@@ -179,15 +179,15 @@ const MyMarathonList = () => {
   };
 
   return (
-    <div className="bg-red-50 pb-20">
-      <h1 className="text-center font-bold text-3xl my-10 text-cyan-600">
+    <div className=" pb-20">
+      <h1 className="text-center font-bold text-3xl my-10 text-black">
         My Marathon List
       </h1>
 
       <div className="">
         <div className="overflow-x-auto">
           <table className="table w-3/4 mx-auto">
-            <thead className="bg-cyan-500 text-white">
+            <thead className="bg-green-200 text-black font-bold">
               <tr>
                 <th className="px-4 py-2 text-left">No :</th>
                 <th className="px-4 py-2 text-left">Image</th>
@@ -221,7 +221,7 @@ const MyMarathonList = () => {
                   <td className="flex gap-2">
                     <button
                       onClick={() => handleModal(marathon._id)}
-                      className="btn bg-orange-500 btn-sm"
+                      className="btn bg-green-300 btn-sm"
                     >
                       Update
                     </button>
@@ -230,7 +230,7 @@ const MyMarathonList = () => {
                     <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                       <div className="modal-box">
                         <div className="max-w-4x rounded-md shadow-md mx-auto p-6">
-                          <h1 className="text-3xl font-bold text-cyan-400 text-center mb-6">
+                          <h1 className="text-3xl font-bold text-black text-center mb-6">
                             Update Marathon Event
                           </h1>
                           <form onSubmit={handleSubmit}>
@@ -337,7 +337,7 @@ const MyMarathonList = () => {
                               />
                             </div>
 
-                            <button type="submit" className="btn btn-warning w-full">
+                            <button type="submit" className="btn bg-green-300 w-full">
                               Update Marathon
                             </button>
                           </form>
@@ -351,7 +351,7 @@ const MyMarathonList = () => {
                     {/* Delete button */}
                     <button
                       onClick={() => handleDeleteUser(marathon._id)}
-                      className="btn bg-red-500 btn-sm"
+                      className="btn bg-red-400 text-white btn-sm"
                     >
                       Delete
                     </button>

@@ -68,12 +68,12 @@ const Another2Section = () => {
   ]
   return (
     <div className="">
-   <section className="py-16 bg-gray-200">
+   <section className="py-16 ">
   <div className="container mx-auto text-center">
-    <h2 className="text-3xl font-semibold text-gray-800 mb-8">
+    <h2 className="text-4xl font-bold text-gray-800 mb-8">
       Training Tips for Runners
     </h2>
-    <p className="text-lg text-gray-600 mb-6">
+    <p className="text-lg text-gray-600 mb-6 md:max-w-2xl m-auto">
       Get ready for your marathon with these essential training tips that will improve your performance and help you stay injury-free.
     </p>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
@@ -94,19 +94,19 @@ const Another2Section = () => {
 </section>
 
 
-      <section class="py-16 bg-blue-100">
+      <section class="py-16 ">
         <div class="container mx-auto text-center">
-          <h2 class="text-3xl font-semibold text-gray-800 mb-8">
+          <h2 class="text-4xl font-bold mb-8">
             Recent Marathon Results
           </h2>
-          <p class="text-lg text-gray-600 mb-6">
+          <p class="text-lg text-gray-600 mb-6  md:max-w-2xl m-auto">
             Check out the top runners and their impressive finishes from recent
             marathons. Stay inspired to achieve your goals!
           </p>
           <div class="overflow-x-auto px-4">
-            <table class="table-auto w-full text-left ">
+            <table class="table-auto w-full text-center ">
               <thead>
-                <tr>
+                <tr >
                   <th class="px-4 py-2 text-gray-700 font-semibold">Rank</th>
                   <th class="px-4 py-2 text-gray-700 font-semibold">
                     Runner Name

@@ -62,7 +62,7 @@ const AddMarathon = () => {
 
   return (
     <div className="p-5 lg:p-10 rounded-md">
-      <div className="max-w-4xl bg-cyan-300 text-black rounded-md shadow-sm mx-auto p-6">
+      <div className="max-w-4xl  text-black rounded-md shadow-sm mx-auto p-6">
         <h1 className="text-center font-bold text-3xl mb-5 text-black">Create Marathon Event</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -159,7 +159,7 @@ const AddMarathon = () => {
             />
           </div>
 
-          <button type="submit" className="btn bg-red-400 w-full">
+          <button type="submit" className="btn bg-red-400 text-black w-full">
             Create Marathon
           </button>
         </form>
